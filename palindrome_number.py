@@ -2,12 +2,12 @@ class Solution:
     def isPalindrome(self, x: int) -> bool:
         x = str(x)
         length = len(x)
+        start = 0
         end = length - 1
 
-        while end >= 0:
-            for i in range(length):
-                if x[i] == x[end]:
-                    return True
-                elif x[i] != x[end]:
-                    return False
+        while start < end:
+            if x[start] != x[end]:
+                return False
+            start += 1
             end -= 1
+        return True
